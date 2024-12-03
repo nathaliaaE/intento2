@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.historia {
+top: 100px;
+position: relative;
+}
+
+
+.historia h1{
+    position: relative;
+    top: -100px;
+    width: 100%;
+    font-family: 'Zen Maru Gothic';
+    color: #0e3056;
+    background-color: white ;
+    text-align: center;
+    font-size: 5vh;
+    padding-top: 90px;
+    padding-bottom: 50px;
+}
+
+.historia p {
+    display: flex;
+    top: -120px;
+    font-size: 2.4vh;
+    margin: 0px 300px 50px 300px;
+    justify-content: center;
+    text-align: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+section img {
+    background-image: url(/img/div1.png);
+    background-attachment: fixed;
+    width: 100%;
+    top: 30px;
+    position: relative;
+}
+
+.actividadA h1{
+    position: relative;
+    top: -100px;
+    width: 100%;
+    font-family: 'Zen Maru Gothic';
+    color: #0e3056;
+    background-color: white ;
+    text-align: center;
+    font-size: 5vh;
+    padding-top: 90px;
+    padding-bottom: 50px;
+}
+
+.actividadA p {
+    display: flex;
+    top: -120px;
+    font-size: 2.4vh;
+    margin: 0px 300px 50px 300px;
+    justify-content: center;
+    text-align: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+
+/* Contenedor principal para alinear las cajas en una fila */
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 270px);
+    grid-template-rows: auto;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    top: -100px;
+}
+
+/* Contenedor individual de cada carta */
+.container {
+    width: 270px;
+    height: 340px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    margin: 0;
+}
+
+/* Estilo para las cartas */
+.card, .card2, .card3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.5s ease;
+    z-index: 2;
+}
+
+.card { background-image: url('/img/mision.png'); }
+.card2 { background-image: url('/img/Visión.png'); }
+.card3 { background-image: url('/img/valores.png'); }
+
+/* Estilo para el contenido debajo de las cartas */
+.content, .content2, .content3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 100%;
+    background-color: #0e3056;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Efecto hover */
+.container:hover .card,
+.container:hover .card2,
+.container:hover .card3 {
+    transform: translateX(-100%);
+}
+
+.container:hover .content,
+.container:hover .content2,
+.container:hover .content3 {
+    opacity: 1;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 1000px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 270px);
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 270px;
+    }
+}
+
+footer {
+    margin-top: 400px;
+}
+
+/* Estilos para el footer simplificado */
+.site-footer {
+    background-color: #0e3056;
+    color: #ffffff;
+    padding: 30px 0 20px;
+    font-family: 'Zen Maru Gothic', Arial, sans-serif;
+    position: relative;
+    top: -100px; /* Ajusta este valor según sea necesario */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo img {
+    height: 230px; /* Ajusta según el tamaño de tu logo */
+    position: absolute;
+    top: -60px;
+    padding: -100px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Zen Maru Gothic';
+    transition: all 1.5s ease;
+    gap: 5vh;
+}
+
+.footer-links a:hover {
+    color: #cccccc;
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #2c4a6d;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    color: #cccccc;
+    font-size: 14px;
+}

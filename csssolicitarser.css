@@ -1,0 +1,146 @@
+nav {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: transparent;
+    z-index: 1000;
+}
+
+ul {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background-color: #0e3056;
+    border-radius: 0 0 5px 5px;
+    z-index: 1000;
+}
+
+input:checked ~ ul {
+    max-height: 300px;
+    visibility: visible;
+}
+
+li {
+    opacity: 1;
+    transform: none;
+}
+
+input:not(:checked) ~ ul li {
+    transform: none;
+    opacity: 1;
+}
+
+/* Estilos para el menú hamburguesa */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger-icon {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    transition: .5s ease-in-out;
+}
+
+.hamburger-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.hamburger-icon span:nth-child(1) {
+    top: 0px;
+}
+
+.hamburger-icon span:nth-child(2) {
+    top: 8px;
+}
+
+.hamburger-icon span:nth-child(3) {
+    top: 16px;
+}
+
+/* Animación cuando el menú está abierto */
+#menu-toggle:checked + .hamburger-menu .hamburger-icon span:nth-child(1) {
+    top: 8px;
+    transform: rotate(135deg);
+}
+
+#menu-toggle:checked + .hamburger-menu .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+#menu-toggle:checked + .hamburger-menu .hamburger-icon span:nth-child(3) {
+    top: 8px;
+    transform: rotate(-135deg);
+}
+
+/* Estilos para el menú */
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #0e3056;
+    padding-top: 60px;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+#menu-toggle:checked ~ .menu {
+    left: 0;
+}
+
+/* Ocultar el checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Estilos para las opciones del menú */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    top: 0;
+    background: transparent;
+}
+
+.menu li {
+    padding: 15px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Zen Maru Gothic';
+    display: block;
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    color: #cccccc;
+    padding-left: 10px;
+} 
